@@ -1,0 +1,40 @@
+.navbar .navbar-brand{
+    font-size: 32px;
+}
+
+.navbar a{
+    color: white !important;
+}
+
+.seccion-1{
+    background-image: url(../../assets/images/placeholder-modeler.png);
+}
+
+.texto-intro{
+    color: white;
+    padding-top: 120px;
+}
+
+.texto-intro h2{
+    font-size: 58px;
+    padding-bottom: 24px;
+}
+
+button{
+    border-radius: 15px !important;
+    font-size: 21px !important;
+    padding-left: 27px !important;
+    padding-right: 27px !important;
+}
+
+.btn-primary{
+    background-color: #2baeff !important;
+    padding: 12px 27px !important;
+    border: none !important;
+}
+
+.btn-outline-primary{
+    border-color: white !important;
+    color: white !important;
+    padding: 12px 59px !important;
+}
