@@ -23,7 +23,7 @@ const BPMN_DIAGRAM = `
     <bpmndi:BPMNDiagram id="BpmnDiagram_1">
       <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Process_1" />
     </bpmndi:BPMNDiagram>
-  </definitions>
+  </definitions>  
 `;
 
 const BPMN_DIAGRAM_WITH_WARNINGS = `

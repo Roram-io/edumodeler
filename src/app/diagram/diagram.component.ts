@@ -108,4 +108,8 @@ export class DiagramComponent implements AfterContentInit, OnChanges, OnDestroy 
   private importDiagram(xml: string): Observable<{warnings: Array<any>}> {
     return from(this.bpmnJS.importXML(xml) as Promise<{warnings: Array<any>}>);
   }
+
+  saveDiagram(){
+    console.log("Salida")
+  }
 }

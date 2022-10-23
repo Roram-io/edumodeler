@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DiagramComponent } from './diagram/diagram.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,9 @@ export class AppComponent implements OnInit {
   title = 'bpmn-js-angular';
   diagramUrl = 'https://cdn.staticaly.com/gh/bpmn-io/bpmn-js-examples/dfceecba/starter/diagram.bpmn';
   importError?: Error;
+
+  @ViewChild(DiagramComponent)
+  diagramComponent: DiagramComponent;
 
   handleImported(event) {
 
@@ -35,6 +39,10 @@ export class AppComponent implements OnInit {
 
   toggleModeler(value){
     this.showModeler = value;
+  }
+
+  guardarXML(){
+    this.diagramComponent.saveDiagram();
   }
 
 }

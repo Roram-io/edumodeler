@@ -2,7 +2,7 @@
 
   <nav class="navbar navbar-expand-lg"  style="background-color: #1784c7;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Edumodeler</a>
+      <a class="navbar-brand" href="#"><strong style="color:#841e0d">Edu</strong><a style="color:#373737">Modeler</a></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,14 +27,15 @@
   
 </section>
 <div *ngIf="showModeler">
-<h1> Modelador Bpmn</h1>
+  <h1> Modelador Bpmn</h1>
 
-<div class="diagram-parent">
+  <div class="diagram-parent">
   <app-diagram [url]="diagramUrl" (importDone)="handleImported($event)"></app-diagram>
 
-  <div class="import-error" *ngIf="importError">
+    <div class="import-error" *ngIf="importError">
     <strong>Failed to render diagram: </strong>
     {{ importError.message }}
+    </div>
   </div>
-</div>
+  <button type="button" class="btn btn-primary" (click)="guardarXML()">Guardar XML</button>
 </div>
