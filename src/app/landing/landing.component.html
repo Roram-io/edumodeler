@@ -1,4 +1,4 @@
-<body style="background-image: url(../assets/images/landingImage.png);">
+<body *ngIf="isVisible" style="background-image: url(../assets/images/landingImage.png);">
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -7,11 +7,9 @@
                     <p class="">
                         Esta herramienta permite le desarrollo de modelos BPMN extendidos utilizando estereotipos.<br>
                         ¿Primera vez utilizando la herramienta? ¡Revisa la Documentación! <br>
-                        ¿Ya eres usuario? Selecciona el tipo de trabajo
+                        ¿Ya eres usuario? Selecciona la pestaña de Modelador
                     </p>
-                </div>                
-                <a>   </a>
-                <!--<button type="button" class="btn btn-primary" style="padding-left: 120px;">Cargar Último</button> -->
+                </div>      
             <br>
             <br>
             <br>              

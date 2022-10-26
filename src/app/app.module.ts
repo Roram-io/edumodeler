@@ -7,8 +7,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { DocumentacionComponent } from './documentacion/documentacion.component';
-import { ModelerComponent } from './modeler/modeler.component';
-import { MissinglinkComponent } from './missinglink/missinglink.component'
+import { MissinglinkComponent } from './missinglink/missinglink.component';
+import { ModelerComponent } from './modeler/modeler.component'
 
 @NgModule({
   declarations: [
@@ -17,8 +17,8 @@ import { MissinglinkComponent } from './missinglink/missinglink.component'
     LandingComponent,
     NoticiasComponent,
     DocumentacionComponent,
-    ModelerComponent,
-    MissinglinkComponent
+    MissinglinkComponent,
+    ModelerComponent
   ],
   imports: [
     BrowserModule,

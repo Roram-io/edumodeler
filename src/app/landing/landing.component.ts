@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppComponent } from '../app.component';
+
 
 @Component({
   selector: 'app-landing',
@@ -7,11 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
-   
   }
 
+  isVisible=true;
 
 }

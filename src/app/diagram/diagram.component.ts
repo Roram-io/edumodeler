@@ -110,6 +110,28 @@ export class DiagramComponent implements AfterContentInit, OnChanges, OnDestroy 
   }
 
   saveDiagram(){
-    console.log("Salida")
+    this.bpmnJS.saveXML({ format: true }, (err: any, xml: any) => {
+      if (err) {
+        return console.error('Hubo un problema en la exportación', err);
+      }
+      const xmlClone = xml;
+      alert("Descargando el archivo XML");
+      this.procesarEstereotipo(xml);
+      var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(xmlClone));
+    element.setAttribute('download', "eduModel.xml");
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+
+  });
+  }
+
+  procesarEstereotipo(xml){
+
   }
 }

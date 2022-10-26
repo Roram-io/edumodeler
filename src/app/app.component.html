@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-item nav-link" routerLink="/modeler" (click)="toggleModeler(true)">Modelador</a>
+            <a class="nav-item nav-link" routerLink="/diagram" (click)="toggleModeler(true)">Modelador</a>
           </li>
           <li class="nav-item">
             <a class="nav-item nav-link" routerLink="/documentacion" (click)="toggleModeler(false)">Documentación</a>
@@ -30,12 +30,13 @@
   <h1> Modelador Bpmn</h1>
 
   <div class="diagram-parent">
-  <app-diagram [url]="diagramUrl" (importDone)="handleImported($event)"></app-diagram>
+    <app-diagram [url]="diagramUrl" (importDone)="handleImported($event)"></app-diagram>
 
     <div class="import-error" *ngIf="importError">
     <strong>Failed to render diagram: </strong>
     {{ importError.message }}
     </div>
   </div>
-  <button type="button" class="btn btn-primary" (click)="guardarXML()">Guardar XML</button>
+  <a>             </a>
+  <button type="button" class="btn btn-primary" style="left-padding: 50%;" (click)="guardarXML()">Guardar XML</button>  
 </div>
