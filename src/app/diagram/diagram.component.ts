@@ -53,7 +53,7 @@ export class DiagramComponent implements AfterContentInit, OnChanges, OnDestroy 
 
     this.bpmnJS.on('import.done', ({ error }) => {
       if (!error) {
-        this.bpmnJS.get('canvas').zoom('fit-viewport');
+        this.bpmnJS.get('canvas');
       }
     });
   }
