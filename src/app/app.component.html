@@ -28,15 +28,19 @@
 </section>
 <div *ngIf="showModeler">
   <h1> Modelador Bpmn</h1>
-  <div class="alert alert-primary" role="alert">
-    This is a primary alert—check it out!
+  
+  <div *ngIf="alertAdded" class="alert alert-success" role="alert">
+    {{ alertMessageAdded }}
   </div>
-  <div class="alert alert-secondary" role="alert">
-    This is a secondary alert—check it out!
+
+  <div *ngIf="alertNeutral" class="alert alert-success" role="alert">
+    {{ alertMessageAdded }}
   </div>
-  <div class="alert alert-success" role="alert">
-    This is a success alert—check it out!
+
+  <div *ngIf="alertRemoved" class="alert alert-success" role="alert">
+    {{ alertMessageAdded }}
   </div>
+  
 
   <div class="diagram-parent">
     <app-diagram [url]="diagramUrl" (importDone)="handleImported($event)"></app-diagram>
@@ -49,5 +53,5 @@
   <a>     </a>
   <div>     </div>
   <a>     </a>
-  <button type="button" class="btn btn-primary" (click)="guardarXML()">Guardar XML A</button>  
+  <button type="button" class="btn btn-primary" (click)="guardarXML()">Exportar XML</button>  
 </div>

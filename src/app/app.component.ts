@@ -10,10 +10,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  
   showModeler = false;
   title = 'bpmn-js-angular';
   diagramUrl = 'https://cdn.staticaly.com/gh/bpmn-io/bpmn-js-examples/dfceecba/starter/diagram.bpmn';
   importError?: Error;
+  alertMessageAdded = 'Se ha añadido el estereotipo &lt;&lt;RW&gt;&gt;. ¡Úsalo para definir un asistente!'
 
   @ViewChild(DiagramComponent)
   diagramComponent: DiagramComponent;
