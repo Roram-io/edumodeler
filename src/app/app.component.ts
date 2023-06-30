@@ -8,14 +8,20 @@ import { DiagramComponent } from './diagram/diagram.component';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    
+    setInterval(() => { this.verificarXML() }, 3000);
+
   }
   
   showModeler = false;
   title = 'bpmn-js-angular';
   diagramUrl = 'https://cdn.staticaly.com/gh/bpmn-io/bpmn-js-examples/dfceecba/starter/diagram.bpmn';
   importError?: Error;
-  alertMessageAdded = 'Se ha añadido el estereotipo &lt;&lt;RW&gt;&gt;. ¡Úsalo para definir un asistente!'
+  alertMessageAdded = 'Area de Cambios. Aquí podrá monitorear los cambios que realice.'
+  alertAdded = false;
+  alertNeutral = true;
+  alertRemoved = false;
+
+
 
   @ViewChild(DiagramComponent)
   diagramComponent: DiagramComponent;
@@ -45,6 +51,30 @@ export class AppComponent implements OnInit {
 
   guardarXML(){
     this.diagramComponent.saveDiagram();
+    this.verificarXML();
   }
 
+  verificarXML(){
+    var resultado: String;
+    this.diagramComponent.escanearEstereotipos();
+    resultado = localStorage.getItem("XMLfile")    
+    if (resultado.includes("&#60;&#60;RW&#62;&#62;")){
+    this.alertAdded = true;
+    this.alertNeutral = false;
+    this.alertRemoved = false;
+    this.alertMessageAdded = "Se ha añadido el estereotipo RW.";
+    }
+    if (resultado.includes("&#60;&#60;ERROR&#62;&#62;")){
+      this.alertAdded = false;
+      this.alertNeutral = false;
+      this.alertRemoved = true;
+      this.alertMessageAdded = "El estereotipo ERROR no existe. Esto provocará un error de compilación.";
+    }
+    localStorage.removeItem("XMLfile")
+  }
+  
+
+ 
 }
+
+
