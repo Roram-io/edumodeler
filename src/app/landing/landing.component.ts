@@ -10,6 +10,7 @@ import { AppComponent } from '../app.component';
 export class LandingComponent implements OnInit {
 
   ngOnInit(): void {
+    localStorage.removeItem("XMLfile");
   }
 
   isVisible=true;
